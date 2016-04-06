@@ -1,0 +1,411 @@
+@import "variables";
+
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    color: $text-color;
+    margin: 0;
+    line-height: 1.6;
+    padding-top: 93px;
+}
+
+h1 {
+    color: $primary-color;
+    font-size: 2.5em;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: solid 2px $primary-color;
+}
+
+h2 {
+    color: $secondary-text-color;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 100;
+    border-bottom: 2px solid $primary-color;
+}
+
+h3 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100; 
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: $text-color; 
+}
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.1em;
+    color: $text-color;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+i {
+    padding: 0 10px;
+}
+
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background: $white;
+    box-shadow: 0 1px 4px rgba(0,0,0,.4);
+    width: 100%;
+    top: 0;
+    z-index: 200;
+    
+    a, label {
+        text-align: center;
+        display: block;
+        padding: 10px 15px;
+        font-size: .95em;
+        color: $primary-color;
+        text-transform: uppercase;
+        z-index: 500;
+        transition: letter-spacing .55s;
+        
+        &:hover{
+            color: $lighter-primary-color;
+            letter-spacing: 4px;
+            cursor: pointer;
+        }
+    }
+    
+    .pipe {
+        font-size: 1.5em;
+        color: $primary-color;
+    }
+    
+    .item {
+        flex: 1;
+    }
+    
+    .nav {
+        align-self: center;
+    }
+    
+    .brand {
+        flex: 2;
+        font-size: 2em;
+        background: $white;
+        border-radius: 10px;
+        
+        span {
+            font-size: .75em;
+        }
+    }
+}
+
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+    padding-top: .35em;
+    padding-bottom: .35em;
+}
+
+.banner {
+    width: 100%;
+    height: 90%;
+	background: #3acec2;
+	margin-bottom: 24px;
+    z-index: -10;
+}
+
+.main-footer {
+    color: $secondary-text-color;
+    text-align: center;
+    background: $light-black;
+	padding: 2em 0;
+	margin-top: 30px;
+    
+    i {
+        color: $secondary-text-color;
+        transition: transform 0.4s cubic-bezier(.55, -.62, .27, 1.2);
+        
+        &:hover {
+            transform: scale(1.5);
+        }    
+    }
+}
+
+.container {
+    margin: 55px 70px;
+    height: 85%; 
+    text-align: center;
+    padding-top: 40px;
+}
+
+.projects {
+    padding-left: 200px;
+    
+    li {
+       position: relative;
+        width: 25%;
+        height: 30%;
+        margin: 10px;
+        float: left;
+        overflow: hidden;
+        
+        p {
+            color: $white;
+            margin: 5px;
+            font-size: .95em;
+        }
+        
+        .overlay, img {
+            transition: transform .6s;
+        }
+        
+        .overlay {
+            color: $white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0; 
+            left: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            opacity: 1;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: $darker-primary-color;
+            transform: translateX(-100%);
+        }
+        
+        .button {
+            color: $white;
+            background: $primary-color;
+            width: 70%;
+            font-weight: 700;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px 0;
+            border: 2px solid $primary-color;
+            border-radius: .5em;
+            opacity: 0;
+            transition: opacity .3s .4s, 
+                        background .4s .3s, 
+                        box-shadow .4s 0s,
+                        color .4s 0s;
+                        
+           &:hover {
+                background: $button-hover;
+                box-shadow: 0 0 0 3px $primary-color;
+                color: $primary-color;
+           }
+        }
+        
+        &:hover {
+            .overlay {
+                transform: translateX(0);
+            }
+            
+            img {
+                transform: translateX(100%);
+            }
+            
+            .button {
+                opacity: 1;
+            }
+        } 
+    }
+}
+
+/* ---- Page Elements ---- */
+
+.feat-img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-img {
+    height: 300px;
+    width: 200px;
+    border-radius: 50px;
+    -webkit-box-shadow: 10px 10px 21px -2px rgba(0,0,0,0.75);
+       -moz-box-shadow: 10px 10px 21px -2px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 21px -2px rgba(0,0,0,0.75);
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ---- Accordion Menu ---- */
+
+.tab-group {
+    width: 100%
+}
+
+.tab {
+    position: relative;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.tab input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -999;
+}
+
+.tab label {
+    background: $black;
+    color: $white;
+    display: block;
+    font-size: 1.5em;
+    font-weight: 100;
+    line-height: 3;
+    padding-left: .5em;
+    margin-bottom: .5em;
+    transition: letter-spacing .55s;
+}
+
+.tab input:focus + label,
+.tab label:hover {
+    background: $light-black;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.tab-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .35s;
+}
+
+.tab-content ul {
+    text-align: justify;
+    list-style: disc;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.tab-content p {
+    margin: 1em 0;
+}
+
+.tab input:checked ~ .tab-content {
+    max-height: 200px;
+}
+
+/* ================================= 
+            Modal
+==================================== */
+
+/* ---- Form Styles ---- */
+
+input[type = checkbox] {
+    position: absolute;
+    top: -1000px;
+}
+
+
+/* ---- Modal Animation ---- */
+
+.modal-overlay {
+    opacity: 0;
+    z-index: -1000;
+    transform: scale(.001);
+    transition: all .75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+input:checked ~ .modal-overlay {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1000;
+}
+
+/* ---- Modal Styles ---- */
+
+.modal {
+  background: $white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  padding: 1em;
+}
+
+.modal-overlay {
+    background: rgba(0,0,0,.8);
+    border-radius: 10px;
+    top: 10px;
+    left: 30%;
+    right: 30%;
+    position: fixed;
+    text-align: center;
+    text-shadow: none;
+    z-index: 600;
+}
+
+.modal-wrap i {
+    transition: transform .4s; 
+}
+
+.modal-wrap i:hover {
+    transform: rotate(-20deg);
+}
+
+.modal-wrap p,
+.modal-wrap a {
+    color: $secondary-text-color;
+}
+
+.modal-wrap a:hover {
+    border-bottom: 2px solid $secondary-text-color;
+}
+
+.modal-wrap label {
+  background: $primary-color;
+  border-radius: 50%;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.5em;
+  line-height: 1.5;
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  width: 1.5em;
+  transition: all ease 1s;
+}
+
+.modal-wrap label:hover {
+    transform: rotate(900deg) scale(1.5);
+}
