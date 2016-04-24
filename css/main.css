@@ -18,6 +18,12 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   border-bottom: solid 2px #c19a82; }
+  @media handheld, screen and (max-width: 900px) {
+    h1 {
+      font-size: 1.5em; } }
+  @media handheld, screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.3em; } }
 
 h2 {
   color: rgba(250, 250, 250, 0.7);
@@ -26,13 +32,17 @@ h2 {
   letter-spacing: 3px;
   font-weight: 100;
   border-bottom: 2px solid #c19a82; }
+  @media handheld, screen and (max-width: 900px) {
+    h2 {
+      font-size: 1em; } }
 
 h3 {
   margin-top: 5px;
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 100; }
+  font-weight: 100;
+  font-size: .95em; }
 
 ul {
   margin: 0;
@@ -46,6 +56,12 @@ a {
 p {
   font-size: 1.1em;
   color: rgba(50, 50, 50, 0.5); }
+  @media handheld, screen and (max-width: 900px) {
+    p {
+      font-size: 1em; } }
+  @media handheld, screen and (max-width: 600px) {
+    p {
+      font-size: 0.93em; } }
 
 img {
   max-width: 100%;
@@ -74,12 +90,17 @@ i {
     font-size: .95em;
     color: #c19a82;
     text-transform: uppercase;
+    letter-spacing: 3px;
     z-index: 500;
     transition: letter-spacing .55s; }
     .main-nav a:hover, .main-nav label:hover {
       color: rgba(193, 154, 130, 0.5);
-      letter-spacing: 4px;
+      letter-spacing: 6px;
       cursor: pointer; }
+      @media handheld, screen and (max-width: 900px) {
+        .main-nav a:hover, .main-nav label:hover {
+          color: #c19a82;
+          letter-spacing: 3px; } }
   .main-nav .pipe {
     font-size: 1.5em;
     color: #c19a82; }
@@ -94,6 +115,14 @@ i {
     border-radius: 10px; }
     .main-nav .brand span {
       font-size: .75em; }
+  @media handheld, screen and (max-width: 900px) {
+    .main-nav {
+      flex-direction: column; }
+      .main-nav a, .main-nav label {
+        font-size: 0.95em;
+        padding: 5px 0; }
+      .main-nav span, .main-nav .brand, .main-nav .remove {
+        display: none; } }
 
 /* ---- Layout Containers ---- */
 .main-header {
@@ -106,6 +135,14 @@ i {
   background: #3acec2;
   margin-bottom: 24px;
   z-index: -10; }
+  @media handheld, screen and (max-width: 900px) {
+    .banner {
+      margin-bottom: 10px;
+      height: 75%; } }
+  @media handheld, screen and (max-width: 600px) {
+    .banner {
+      margin-bottom: 5px;
+      height: 50%; } }
 
 .main-footer {
   color: rgba(250, 250, 250, 0.7);
@@ -121,12 +158,33 @@ i {
 
 .container {
   margin: 55px 70px;
-  height: 85%;
   text-align: center;
   padding-top: 40px; }
+  @media handheld, screen and (max-width: 900px) {
+    .container {
+      margin: 10px 10%;
+      padding-top: 10px; }
+      .container p {
+        text-align: left; } }
+  @media handheld, screen and (max-width: 600px) {
+    .container {
+      margin: 5px 10%;
+      padding-top: 5px; } }
+
+#projects {
+  height: 85%; }
+  @media handheld, screen and (max-width: 1000px) {
+    #projects {
+      display: none; } }
 
 .projects {
-  padding-left: 200px; }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; }
+  @media handheld, screen and (max-width: 1000px) {
+    .projects {
+      display: none; } }
   .projects li {
     position: relative;
     width: 25%;
@@ -137,7 +195,7 @@ i {
     .projects li p {
       color: #fff;
       margin: 5px;
-      font-size: .95em; }
+      font-size: .80em; }
     .projects li .overlay, .projects li img {
       transition: transform .6s; }
     .projects li .overlay {
@@ -157,16 +215,22 @@ i {
       background: #8e674f;
       transform: translateX(-100%); }
     .projects li .button {
+      position: relative;
       color: #fff;
       background: #c19a82;
-      width: 70%;
+      width: 100px;
+      height: 40px;
+      margin-top: 12px;
       font-weight: 700;
+      font-size: 0.75em;
+      line-height: 18px;
       display: block;
       text-decoration: none;
       text-transform: uppercase;
+      text-align: center;
       padding: 10px 0;
       border: 2px solid #c19a82;
-      border-radius: .5em;
+      border-radius: 0.5em;
       opacity: 0;
       transition: opacity .3s .4s,  background .4s .3s,  box-shadow .4s 0s, color .4s 0s; }
       .projects li .button:hover {
@@ -234,12 +298,22 @@ i {
   max-height: 0;
   overflow: hidden;
   transition: all .35s; }
+  @media handheld, screen and (max-width: 900px) {
+    .tab-content {
+      max-height: 1000px;
+      overflow: visible; } }
 
 .tab-content ul {
   text-align: justify;
   list-style: disc;
   display: inline-block;
   margin-left: 50px; }
+  @media handheld, screen and (max-width: 900px) {
+    .tab-content ul {
+      font-size: 1em; } }
+  @media handheld, screen and (max-width: 600px) {
+    .tab-content ul {
+      font-size: 0.93em; } }
 
 .tab-content p {
   margin: 1em 0; }
@@ -270,7 +344,6 @@ input:checked ~ .modal-overlay {
 /* ---- Modal Styles ---- */
 .modal {
   background: #fff;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
   display: inline-block;
   padding: 1em; }
 
@@ -284,6 +357,10 @@ input:checked ~ .modal-overlay {
   text-align: center;
   text-shadow: none;
   z-index: 600; }
+  @media handheld, screen and (max-width: 900px) {
+    .modal-overlay {
+      left: 12px;
+      right: 12px; } }
 
 .modal-wrap i {
   transition: transform .4s; }
@@ -314,5 +391,33 @@ input:checked ~ .modal-overlay {
 
 .modal-wrap label:hover {
   transform: rotate(900deg) scale(1.5); }
+  @media handheld, screen and (max-width: 900px) {
+    .modal-wrap label:hover {
+      transform: none; } }
+
+.slide-animation {
+  visibility: hidden; }
+
+.slide {
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible; }
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%); } }
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%); } }
 
 /*# sourceMappingURL=main.css.map */

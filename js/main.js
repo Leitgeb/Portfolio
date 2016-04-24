@@ -28,6 +28,18 @@ $(window).scroll(function() {
       $('.title').fadeIn();
      }
  }); //End hide function
+ 
+ //Slide in Animation
+$(window).scroll(function() {
+  $(".slide-animation").each(function(){
+    var pos = $(this).offset().top;
+
+    var winTop = $(window).scrollTop();
+    if (pos < winTop + 600) {
+      $(this).addClass("slide");
+    }
+  });
+}); //End Slide in Animation
 
  //Populates the project's section 
  function print(content) {
@@ -35,13 +47,13 @@ $(window).scroll(function() {
      projects.innerHTML = content;
  }
  
- var html = '<h1>Projects</h1>';
+ var html = '<h1 class="slide-animation">Projects</h1>';
  html += '<ul class="projects">';
  
  for (var i = 0; i < projects.length; i++) {
-     html += '<li><a href="' + projects[i].img + '"><img src="' + projects[i].img + '" alt="" height="200" width="335"></a>';
+     html += '<li class="slide-animation"><a href="' + projects[i].img + '"><img src="' + projects[i].img + '" alt="" height="200" width="335"></a>';
      html += '<div class="overlay"><h3>' + projects[i].name + '</h3><p>' + projects[i].desc + '</p><a href="' + projects[i].url + '" target="_blank"';
-     html += 'class="button">View Demo<i class="fa fa-eye"></i></a></div></li>';
+     html += 'class="button">View Demo</a></div></li>';
  }
  
  html += "</ul>";
