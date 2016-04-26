@@ -7,10 +7,10 @@ var projects = [
      },
      
      {
-         name: 'Sample 2',
-         img: 'img/sample8.jpg',
-         url: '#',
-         desc: 'This is the description for the sample 2 project.'
+         name: 'SRL2 Web Design & Development',
+         img: 'img/WebCompany.png',
+         url: 'http://business.leitgeb-web-dev.com',
+         desc: 'Mock for a web development company.'
      },
      
      {
