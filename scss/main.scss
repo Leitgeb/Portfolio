@@ -395,7 +395,7 @@ i {
 .tab-content {
     max-height: 0;
     overflow: hidden;
-    transition: all .35s;
+    transition: all .55s;
     
     @media handheld,screen and (max-width: 900px) {
         max-height: 1000px;
@@ -423,7 +423,7 @@ i {
 }
 
 .tab input:checked ~ .tab-content {
-    max-height: 200px;
+    max-height: 500px;
 }
 
 /* ================================= 
