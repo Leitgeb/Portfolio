@@ -380,7 +380,9 @@ i {
     line-height: 3;
     padding-left: .5em;
     margin-bottom: .5em;
-    transition: letter-spacing .55s;
+    -webkit-transition: letter-spacing .55s;
+       -moz-transition: letter-spacing .55s;
+            transition: letter-spacing .55s;
 }
 
 .tab input:focus + label,
